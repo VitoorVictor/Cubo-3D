@@ -1,0 +1,77 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  perspective: 500px;
+ 
+}
+
+.cube {
+  width: 200px;
+  height: 200px;
+  transform-style: preserve-3d;
+  animation: rotate 10s infinite alternate;
+}
+
+.face {
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 50px;
+  font-weight: bold;
+  color: #234e52;
+
+  width: 200px;
+  height: 200px;
+  position: absolute;
+}
+
+.face--front {
+  transform: translateZ(100px);
+}
+
+.face--right {
+  transform: rotateY(90deg) translateZ(100px);
+}
+
+.face--back {
+  transform: rotateY(180deg) translateZ(100px);
+}
+
+.face--left {
+  transform: rotateY(-90deg) translateZ(100px);
+}
+
+.face--top {
+  transform: rotateX(90deg) translateZ(100px);
+}
+
+.face--bottom {
+  transform: rotateX(-90deg) translateZ(100px);
+}
+
+@keyframes rainbowLED {
+  0% { background-color: rgba(255, 0, 0, 0.200); border-color: rgba(238, 130, 238, 0.200); transform: rotateX(-20deg) rotateY(-10deg);}    /* Vermelho */
+  17% { background-color: rgba(255, 165, 0, 0.200);border-color: rgba(75, 0, 130, 0.200); }  /* Laranja */
+  34% { background-color: rgba(255, 255, 0, 0.200);border-color: rgba(0, 0, 255, 0.200); }  /* Amarelo */
+  51% { background-color: rgba(0, 128, 0, 0.200);  border-color: rgba(0, 128, 0, 0.200);transform: rotateX(20deg) rotateY(320deg);}    /* Verde */
+  68% { background-color: rgba(0, 0, 255, 0.200); border-color: rgba(255, 255, 0, 0.200); }    /* Azul */
+  85% { background-color: rgba(75, 0, 130, 0.200); border-color: rgba(255, 165, 0, 0.200);}   /* Índigo */
+  100% { background-color: rgba(238, 130, 238, 0.200);border-color: rgba(255, 0, 0, 0.200); transform: rotateX(-20deg) rotateY(-20deg);} /* Violeta */
+}
+@keyframes rotate {
+  from {
+    transform: rotateX(-20deg) rotateY(-10deg);
+  }
+
+  50% {
+    transform: rotateX(20deg) rotateY(320deg);
+  }
+
+  to {
+    transform: rotateX(-20deg) rotateY(-20deg);
+  }
+}
